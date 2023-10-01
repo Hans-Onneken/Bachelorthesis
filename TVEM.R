@@ -1,0 +1,5 @@
+library(tvem)
+data <- read.csv('D:/Uni/Bachelorthesis/R_Data.csv')
+model <- tvem(data = data, formula = CF_success ~ bertscore, invar_effect = ~loved_project + video + funding_duration + number_of_words + log_funding_goal + updates + rewards + number_projects, id = X, num_knots=8, time = year)
+plot(model)
+print(model)
